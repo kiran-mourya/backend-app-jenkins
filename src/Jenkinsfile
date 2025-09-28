@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     tools {
-            jdk 'Java17'
-            maven 'Maven3'
-        }
+        jdk 'Java17'
+        maven 'Maven3'
+    }
 
     stages {
         stage('Checkout') {
@@ -12,13 +12,11 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/kiran-mourya/product-service.git'
             }
         }
-
-         stage('Build') {
-                    steps {
-                        bat 'mvn clean package -DskipTests'
-                    }
-         }
-
+        stage('Build') {
+            steps {
+                bat 'mvn clean package -DskipTests=false'
+            }
+        }
         stage('Test') {
             steps {
                 bat 'mvn test'
