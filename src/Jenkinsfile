@@ -29,12 +29,6 @@ pipeline {
                 }
             }
         }
-
-        stage('Trigger Downstream Pipeline') {
-            steps {
-                build job: 'product-service-jenkins', wait: true
-            }
-        }
     }
 
     post {
