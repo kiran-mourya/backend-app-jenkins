@@ -10,7 +10,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/kiran-mourya/product-service.git'
+                git branch: 'main', url: 'https://github.com/kiran-mourya/product-service.git',
+                credentialsId: 'bd335eea-88b1-4fce-94b5-53e134dee9cf'
             }
         }
         stage('Build') {
