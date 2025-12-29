@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/kiran-mourya/hotel-service.git'
+                git branch: 'develop', url: 'https://github.com/kiran-mourya/hotel-service.git'
             }
         }
         stage('Build') {
